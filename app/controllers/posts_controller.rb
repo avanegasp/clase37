@@ -12,9 +12,12 @@ class PostsController < ApplicationController
   def create
     post = Post.new(post_params)
     if post.save
-      redirect_to '/'
+        respond_to do |format|
+          format.html{redirect_to '/'}
+          format.json{render json:post}
+        end
+      end
     end
-  end
 
   private
   def post_params

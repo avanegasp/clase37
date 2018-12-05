@@ -1,5 +1,6 @@
 
-<%= form_for @post do |f| %>
+
+<%= form_for @post, :html =>{:class => "form-ajax"} do |f| %>
   <div class="form-group">
     <%= f.label :Título%>:
     <%= f.text_field :title, class:"form-control"  %>
@@ -10,3 +11,4 @@
   </div>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
+repen

@@ -3,7 +3,7 @@
   }
 
   function PostIndexView(){
-    $('form').submit(function(e){
+    $('form.form-ajax').submit(function(e){
       e.preventDefault()
       var $form = $(this);
   var url = $form.attr('action');
@@ -12,14 +12,15 @@
          type: "POST",
          url: url,
          data: $form.serialize(), // serializes the form's elements.
-         contentType: 'application/json',   
+         dataType: 'json',
          success: function(data)
          {
-
-            $('ul').prepend("hola Jade")
+            $('tbody').append(`<tr><td>${data.title}</td><td>${data.description}</td></tr>`)
               // show response from the php script.
+            $(':input[type="submit"]').prop('disabled',false)
          }
        });
+        $form.trigger('reset')
     })
   }
 

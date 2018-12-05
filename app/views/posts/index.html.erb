@@ -1,20 +1,24 @@
 
 <div class="row">
   <div class="col-lg-6">
-    <ul>
-      <% @posts.each do |post|%>
-      <div class="form-group">
-        <h1>Título</h1><li><%= post.title%></li>
-      </div>
-      <div class="form-group">
-        <h2>Description</h2><li><%= post.description%></li>
-      <% end %>
-    </ul>
-    <%= link_to 'Crear un post', '/posts/new'%>
-  </div>
-
-  <div class="col-lg-6">
     <%= render partial: 'form'%>
+  </div>
+  <div class="col-lg-6">
+    <table class="table">
+      <thead>
+          <th>Título</th>
+          <th>Descripción</th>
+      </thead>
+        <tbody>
+          <% @posts.each do |post|%>
+              <tr>
+                <td><%= post.title%></td>
+                <td><%= post.description%></td>
+              </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <%= link_to 'Crear un post', '/posts/new'%>
   </div>
 </div>
 
