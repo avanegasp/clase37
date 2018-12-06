@@ -1,0 +1,26 @@
+
+<table class="table">
+  <thead>
+      <th>Id</th>
+      <th>Título</th>
+  </thead>
+    <tbody class="post-title">
+      <%@posts.each do |post|%>
+      <tr>
+        <td><%=post.id%></td>
+        <td><%=link_to post.title, post_path(post), remote:true%></td>
+      </tr>
+      <%end%>
+    </tbody>
+</table>
+
+<table class="table">
+  <thead>
+      <th>Título</th>
+      <th>description</th>
+  </thead>
+    <tbody class="post-description">
+        <!-- render -->
+    </tbody>
+
+</table>

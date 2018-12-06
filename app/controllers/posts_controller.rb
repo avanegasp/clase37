@@ -10,6 +10,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def ferney
+    @posts = Post.all    
+  end
+
   def new
     @post = Post.new
   end
