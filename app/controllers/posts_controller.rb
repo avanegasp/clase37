@@ -3,15 +3,6 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @post = Post.new
-    respond_to do |format|
-      format.html{}
-      format.js{}
-      # format.json{render json:@posts}
-    end
-  end
-
-  def ferney
-    @posts = Post.all    
   end
 
   def new
@@ -34,6 +25,7 @@ class PostsController < ApplicationController
       post.destroy
       redirect_to '/'
     end
+
   private
   def post_params
     params.require(:post).permit(:title, :description)
