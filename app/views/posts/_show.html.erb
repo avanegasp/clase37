@@ -1,0 +1,6 @@
+
+  <tr>
+    <td><%= @post.title %></td>
+    <td><%= @post.description %></td>
+    <td><%=link_to 'borrar', post_path, :method => :delete , :confirm=> "Are you sure?"%></td>
+  </tr>

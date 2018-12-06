@@ -35,7 +35,7 @@
                 console.log(data)
              }
            });
-    
+
   })
 
 

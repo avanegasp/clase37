@@ -15,15 +15,21 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.new(post_params)
-    if post.save
-        respond_to do |format|
-          format.html{redirect_to '/'}
-          format.json{render json:post}
-        end
+    @post = Post.new(post_params)
+    if @post.save
+
       end
     end
 
+    def show
+      @post = Post.find(params[:id])
+    end
+
+    def destroy
+      post = Post.find(params[:id])
+      post.destroy
+      redirect_to '/'
+    end
   private
   def post_params
     params.require(:post).permit(:title, :description)

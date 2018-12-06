@@ -1,7 +1,28 @@
 <h1>Mis posts</h1>
 
-<%= render partial: 'form'%>
+<%= form_for @post, :html =>{:class => "form-ajax"} do |f| %>
+  <div class="form-group">
+    <%= f.label :Título%>:
+    <%= f.text_field :title, class:"form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Descripción  %>:
+    <%= f.text_field :description, class:"form-control" %>
+  </div>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
 
+<%= link_to 'Listar todos los post', '/', remote: true%>
+
+<table class="table">
+  <thead>
+      <th>Id</th>
+      <th>Título</th>
+  </thead>
+    <tbody class="post-title">
+        <!-- render -->
+    </tbody>
+</table>
 
 
 <script>
