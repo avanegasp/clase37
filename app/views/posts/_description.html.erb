@@ -1,8 +1,18 @@
 <div class="card-body border border-primary rounded">
     <h5 class="card-title bg-primary text-white p-2">
-        <%=@post.title%>
+      <p>Título: <%=@post.title%></p>
     </h5>
     <p class="card-text">
-        <%=@post.description%>
+      <p>Description: <%=@post.description%></p>
     </p>
+  <div>
+    <ul>
+      <% @post.comments.each do |comment|%>
+        <li><%= comment.description%></li>
+      <% end %>
+    </ul>
+    <div>
+      <%= render partial: 'comments/form'%>
+    </div>
+  </div>
 </div>
