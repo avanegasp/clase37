@@ -5,7 +5,7 @@
     <p class="card-text">
       <p>Description: <%=@post.description%></p>
     </p>
-  <div>
+  <div class="post-comment">
     <ul>
       <% @post.comments.each do |comment|%>
         <li><%= comment.description%></li>
