@@ -1,2 +1,6 @@
 
-$('.post-comment ul').append('<li><%= j @comment.description %></li>')
+if (<%= @errors != nil %>) {
+  alert("no se puede insertar comentario en blanco")
+  }else{
+    $('.post-comment ul').append('<li><%= j @comment.description %></li>')
+  }

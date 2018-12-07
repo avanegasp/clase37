@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
     post = Post.find(params[:post_id])
     @comment = post.comments.new(comments_params)
     unless @comment.save
+      @errors = @comment.errors
     end
   end
 
