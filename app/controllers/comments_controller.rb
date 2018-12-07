@@ -1,12 +1,9 @@
 class CommentsController < ApplicationController
 
   def create
-    @comment = Comment.new(comments_params)
+    post = Post.find(params[:post_id])
+    @comment = post.comments.new(comments_params)
     unless @comment.save
-      p "****************"
-      p @comment.errors
-      p "****************"
-
     end
   end
 
